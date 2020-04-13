@@ -62,7 +62,7 @@ sess.run(init)
 
 input_batch,target_batch=make_batch(sentences)
 
-for epoch in range(500):
+for epoch in range(10000):
     _,loss=sess.run([optimizer,cost],feed_dict={X:input_batch,Y:target_batch})
 
     if(epoch + 1)%1000==0:
