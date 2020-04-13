@@ -52,7 +52,7 @@ b=tf.Variable(tf.random_normal([n_class]))
 tanh=tf.nn.tanh(d+tf.matmul(input,H)) # [batch_size, n_hidden]
 model=tf.matmul(tanh,U)+b  # [batch_size, n_class]
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=model,labels=Y))
-optimizer=tf.train.AdamOptimizer(0.00).minimize(cost)
+optimizer=tf.train.AdamOptimizer(0.01).minimize(cost)
 prediction=tf.argmax(model,1)
 
 #training
