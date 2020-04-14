@@ -1,5 +1,6 @@
 '''
 https://blog.csdn.net/chuchus/article/details/77847476
+降维---> conv ---> 最大池化 --->完全连接层--------> softmax
 '''
 import tensorflow as tf
 import numpy as np
