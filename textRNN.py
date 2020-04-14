@@ -68,8 +68,9 @@ state:
     一般情况下state的形状为 [batch_size, n_hidden]
     但当输入的cell为BasicLSTMCell时，state的形状为[2，batch_size, cell.output_size ]，其中2也对应着LSTM中的cell state和hidden state
 '''
-
+# 单向
 outputs_1,states = tf.nn.dynamic_rnn(cell,X,dtype=tf.float32)
+
 
 # outputs:[batch_size,n_step,n_hidden]
 outputs_ = tf.transpose(outputs_1,[1,0,2]) # [n_step, batch_size, n_hidden]
