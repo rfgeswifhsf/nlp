@@ -38,7 +38,14 @@ Y=tf.placeholder(tf.float32,[None,n_class]) # 7
 W=tf.Variable(tf.random_normal([n_hidden,n_class]))
 b=tf.Variable(tf.random_normal([n_class]))
 
-cell=tf.nn.rnn_cell.BasicRNNCell(n_hidden)
+# RNN
+# cell=tf.nn.rnn_cell.BasicRNNCell(n_hidden)
+
+# LSTM
+# cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden)
+
+# GRU
+cell = tf.nn.rnn_cell.GRUCell(n_hidden)
 '''
 tf.nn.dynamic_rnn(
     cell,
