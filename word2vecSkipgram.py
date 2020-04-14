@@ -28,7 +28,7 @@ voc_size = len(word_list) # 词典的size为不同词的个数 为了对应one_h
 def random_batch(data,size):
     random_inputs = []
     random_labels = []
-    random_index = np.random.choice(range(len(data)),size,replace=False) #mini_batch
+    random_index = np.random.choice(range(len(data)),size,replace=False)
     for i in random_index:
         random_inputs.append(np.eye(voc_size)[data[i][0]])
         random_labels.append(np.eye(voc_size)[data[i][1]])
